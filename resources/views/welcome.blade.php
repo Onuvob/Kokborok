@@ -11,7 +11,9 @@
 
             <div class="container mt-5">
 
-                <h1 class="text-center mb-3 text-white">Kokborok Bathai</h1>
+                <div class="text-center">
+                    <h3 class=" mb-3 text-white header-shape">Kokborok Bathai</h3>
+                </div>
 
 {{--                pagination button--}}
                 @include('layouts.word-layouts.pagination')

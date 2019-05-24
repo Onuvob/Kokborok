@@ -6,17 +6,15 @@
             <div class="col-md-4">
                 <div class="profile-img">
                     <img width="150px" height="150px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
-{{--                    <div class="file btn btn-lg btn-primary">--}}
-{{--                        Change Photo--}}
-{{--                        <input type="file" name="file"/>--}}
-{{--                    </div>--}}
                 </div>
             </div>
+
+
 
             <div class="col-md-6 mt-3">
                 <div class="profile-head">
                     <h5>
-                        {{ Auth::user()->name }}
+                        {{ Auth::user()->gender == 'male' ? 'Mr.' : 'Ms.' }} {{ Auth::user()->name }}
                     </h5>
                     <h6>
                         {{ Auth::user()->profession }}
@@ -65,7 +63,7 @@
                                     <label>Name</label>
                                 </div>
                                 <div class="col">
-                                    <p>{{ Auth::user()->name }}</p>
+                                    <p> {{ Auth::user()->gender == 'male' ? 'Mr.' : 'Ms.' }}  {{ Auth::user()->name }}</p>
                                 </div>
                             </div>
                             <div class="row">

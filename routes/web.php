@@ -36,3 +36,6 @@ Route::get('/about', 'HomeController@about')->name('about');
 //Change this route later to profile controller
 Route::get('/profile', 'HomeController@profile')->name('profile');
 
+//Route to show list of contributors
+Route::get('/contributors', 'HomeController@contributors')->name('contributors');
+

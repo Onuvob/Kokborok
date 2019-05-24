@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except(['contributors']);
     }
 
     /**
@@ -30,5 +30,10 @@ class HomeController extends Controller
     public function profile()
     {
         return view('user-profile.profile');
+    }
+
+    public function contributors()
+    {
+        return view('user-profile.contributors');
     }
 }

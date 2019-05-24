@@ -11,18 +11,23 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
 
+                <li class="nav-item">
+                    <a class="nav-link {{ Request::is('contributors') ? 'active' : ''}}" href="{{ route('contributors') }}">Contributors</a>
+                </li>
+
             </ul>
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest
+
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="nav-link {{ Request::is('login') ? 'active' : ''}}" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link {{ Request::is('register') ? 'active' : ''}}" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                     @endif
                 @else
@@ -33,7 +38,7 @@
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                            <a class="dropdown-item" href="{{ route('profile') }}">
+                            <a class="dropdown-item {{ Request::is('profile') ? 'active' : ''}}" href="{{ route('profile') }}">
                                 Profile
                             </a>
 
