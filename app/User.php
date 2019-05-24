@@ -40,4 +40,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //all user has relationship with all words
+    public function words()
+    {
+        return $this->belongsToMany('App\Model\Word\Word')->withTimestamps();
+    }
 }

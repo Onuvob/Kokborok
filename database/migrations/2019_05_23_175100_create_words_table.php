@@ -14,7 +14,7 @@ class CreateWordsTable extends Migration
     public function up()
     {
         Schema::create('words', function (Blueprint $table) {
-            $table->string('id')->primary();
+            $table->bigIncrements('id');
             $table->string('word');
             $table->string('description');
             $table->string('image');

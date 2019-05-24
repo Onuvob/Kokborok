@@ -15,7 +15,13 @@ class CreateDendaksTable extends Migration
     {
         Schema::create('dendaks', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
+            $table->unsignedBigInteger('user_word_id');
+            $table->string('meaning');
+            $table->foreign('user_word_id')
+                ->references('id')
+                ->on('user_word')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 

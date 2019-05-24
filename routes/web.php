@@ -12,6 +12,16 @@
 */
 
 Route::get('/', function () {
+    //for relationship testing between user and word
+//    $user = \App\User::first();
+//
+//    $word = \App\Model\Word\Word::all();
+//
+//
+//    $user->words()->sync($word);
+//
+//    dd($word);
+
     return view('welcome');
 });
 
