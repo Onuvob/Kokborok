@@ -1,3 +1,5 @@
+@section('title', 'Kokborok Language | Profile')
+
 @extends('layouts.app')
 
 @section('content')

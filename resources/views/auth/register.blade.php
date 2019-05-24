@@ -1,3 +1,5 @@
+@section('title', 'Kokborok Language | Registration')
+
 @extends('layouts.app')
 
 @section('content')
@@ -68,15 +70,15 @@
                                     <div class="form-group">
                                         <div class="text-white">
                                             <label class="radio inline">
-                                                <input type="radio" name="gender" value="male" checked>
-                                                <span> Male </span>
+                                                <input type="radio" name="gender" value="female" checked>
+                                                <span>Female</span>
                                             </label>
                                             <label class="radio inline">
-                                                <input type="radio" name="gender" value="female">
-                                                <span>Female </span>
+                                                <input type="radio" name="gender" value="male">
+                                                <span>Male</span>
                                             </label>
                                             <label class="radio inline">
-                                                <input type="radio" name="gender" value="female">
+                                                <input type="radio" name="gender" value="other">
                                                 <span>Other</span>
                                             </label>
                                         </div>
@@ -100,9 +102,9 @@
 
                                     <div class="form-group">
 
-                                        <input type="text" minlength="11" maxlength="11" name="phoneNumber" class="form-control @error('phoneNumber') is-invalid @enderror" placeholder="Your Phone *" value="{{ old('phoneNumber') }}" required autocomplete="phoneNumber" autofocus/>
+                                        <input type="text" minlength="11" name="phone" class="form-control @error('phone') is-invalid @enderror" placeholder="Your Phone *" value="{{ old('phone') }}" required autocomplete="phone" autofocus/>
 
-                                        @error('phoneNumber')
+                                        @error('phone')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -111,17 +113,12 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <select class="form-control">
-                                            <option hidden selected disabled>Please select your Genus</option>
-                                            <option>A</option>
-                                            <option>A</option>
-                                            <option>A</option>
-                                            <option>A</option>
-                                            <option>A</option>
-                                            <option>A</option>
-                                            <option>A</option>
-                                            <option>A</option>
-                                            <option>A</option>
+                                        <select name="genus" class="form-control @error('genus') is-invalid @enderror" required autocomplete="genus" autofocus>
+                                            <option hidden selected disabled value="">Please select your Genus</option>
+                                            <option @if (old('genus')  == "A") {{ 'selected' }} @endif value="A">A</option>
+                                            <option @if (old('genus') == "B") {{ 'selected' }} @endif value="B">A</option>
+                                            <option @if (old('genus') == "C") {{ 'selected' }} @endif value="C">C</option>
+                                            <option @if (old('genus') == "D") {{ 'selected' }} @endif value="D">D</option>
                                         </select>
 
                                         @error('genus')

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -35,5 +38,17 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    //overridden function to get client ip and login date
+    function authenticated(Request $request)
+    {
+        $user = Auth::user();
+
+        $user->last_login_at = now()->toDateString();
+        $user->last_login_ip = $request->getClientIp();
+
+        $user->save();
+
     }
 }

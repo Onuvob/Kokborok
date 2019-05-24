@@ -16,10 +16,10 @@
             <div class="col-md-6 mt-3">
                 <div class="profile-head">
                     <h5>
-                        Kshiti Ghelani
+                        {{ Auth::user()->name }}
                     </h5>
                     <h6>
-                        Web Developer and Designer
+                        {{ Auth::user()->profession }}
                     </h6>
 
                 </div>
@@ -65,7 +65,15 @@
                                     <label>Name</label>
                                 </div>
                                 <div class="col">
-                                    <p>Kshiti Ghelani</p>
+                                    <p>{{ Auth::user()->name }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <label>Genus</label>
+                                </div>
+                                <div class="col">
+                                    <p>{{ Auth::user()->genus }}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -73,7 +81,7 @@
                                     <label>Email</label>
                                 </div>
                                 <div class="col">
-                                    <p>kshitighelani@gmail.com</p>
+                                    <p>{{ Auth::user()->email }}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -81,7 +89,7 @@
                                     <label>Phone</label>
                                 </div>
                                 <div class="col">
-                                    <p>123 456 7890</p>
+                                    <p>{{ Auth::user()->phone }}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -89,7 +97,7 @@
                                     <label>Profession</label>
                                 </div>
                                 <div class="col">
-                                    <p>Web Developer and Designer</p>
+                                    <p>{{ Auth::user()->profession }}</p>
                                 </div>
                             </div>
                         </div>
@@ -97,42 +105,18 @@
                         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                             <div class="row">
                                 <div class="col">
-                                    <label>Experience</label>
+                                    <label>Word Meaning Added</label>
                                 </div>
                                 <div class="col">
-                                    <p>Expert</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <label>Hourly Rate</label>
-                                </div>
-                                <div class="col">
-                                    <p>10$/hr</p>
+                                    <p>23</p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <label>Total Projects</label>
+                                    <label>Joining Date</label>
                                 </div>
                                 <div class="col">
-                                    <p>230</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <label>English Level</label>
-                                </div>
-                                <div class="col">
-                                    <p>Expert</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <label>Availability</label>
-                                </div>
-                                <div class="col">
-                                    <p>6 months</p>
+                                    <p>{{ Auth::user()->created_at->diffForHumans() }} ({{ Auth::user()->created_at->format('d-m-Y') }}) </p>
                                 </div>
                             </div>
 
@@ -141,9 +125,9 @@
                                 <a class="btn btn-outline-primary" href="{{ route('login') }}">{{ __('Add Word Meaning') }}</a>
                             </div>
 
-                            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#addWordModal">
-                                Add Word
-                            </button>
+{{--                            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#addWordModal">--}}
+{{--                                Add Word--}}
+{{--                            </button>--}}
 
                         </div>
 
