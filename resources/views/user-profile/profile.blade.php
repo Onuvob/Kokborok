@@ -1,4 +1,4 @@
-@section('title', 'Kokborok Language | Profile')
+@section('title', 'Kokborok Language | ' . Auth::user()->name )
 
 @extends('layouts.app')
 
@@ -9,3 +9,5 @@
 
 </div>
 @endsection
+
+

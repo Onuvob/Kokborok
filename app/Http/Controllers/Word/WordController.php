@@ -8,6 +8,17 @@ use App\Http\Controllers\Controller;
 
 class WordController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +26,13 @@ class WordController extends Controller
      */
     public function index()
     {
-        //
+        $words = Word::orderBy('word', 'asc')
+            ->paginate(50);
+
+
+        return view('welcome', [
+            'words' => $words,
+        ]);
     }
 
     /**
@@ -47,7 +64,9 @@ class WordController extends Controller
      */
     public function show(Word $word)
     {
-        //
+        return view('word-view.word-details',[
+            'word' => $word,
+        ]);
     }
 
     /**

@@ -1,17 +1,6 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('/', function () {
+//{
     //for relationship testing between user and word
 //    $user = \App\User::first();
 //
@@ -22,20 +11,28 @@ Route::get('/', function () {
 //
 //    dd($word);
 
-    return view('welcome');
-});
+//    return view('welcome');
+//});
 
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
 
-//Change this route later to word controller
-Route::get('/about', 'HomeController@about')->name('about');
+//Word controller
+
+//fetching all words
+Route::get('/', 'Word\WordController@index');
+
+//specific word details
+Route::get('/words/{word}', 'Word\WordController@show')->name('words.show');
 
 
-//Change this route later to profile controller
-Route::get('/profile', 'HomeController@profile')->name('profile');
+//End Word controller
+
+//User controller
+Route::get('/profile', 'User\UserController@profile')->name('profile');
 
 //Route to show list of contributors
-Route::get('/contributors', 'HomeController@contributors')->name('contributors');
+Route::get('/contributors', 'User\UserController@contributors')->name('contributors');
 
+//End User Controller

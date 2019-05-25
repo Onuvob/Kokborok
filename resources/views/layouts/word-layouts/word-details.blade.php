@@ -9,8 +9,8 @@
 
     <div class="jumbotron bg-custom">
 
-        <h1 class="display-4 text-white">Kok Bathai</h1>
-        <mark>Description:</mark> <p class="lead text-white">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <h1 class="display-4 text-white">{{ $word->word }}</h1>
+        <mark>Description:</mark> <p class="lead text-white">{{ $word->description }}</p>
 
         <div class="text-center">
             <img width="200" height="200" src="https://images.pexels.com/photos/2291591/pexels-photo-2291591.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="rounded" alt="...">
@@ -21,33 +21,33 @@
         <div class="row">
 
             <div class="col text-center">
-                <h3 class="border-radius">Fatung</h3>
-                <p class="border-radius-word"> <q>Hi Meaning</q></p>
+                <h3 class="border-radius">Fatung</h3> <br>
+                <p class="border-radius-word"> <q>{{ $word->fatung }}</q></p>
             </div>
 
             <div class="col text-center">
-                <h3 class="border-radius">Khali</h3>
-                <p class="border-radius-word"> <q>Hi Meaning</q></p>
+                <h3 class="border-radius">Khali</h3> <br>
+                <p class="border-radius-word"> <q>{{ $word->khali }}</q></p>
             </div>
 
             <div class="col text-center">
-                <h3 class="border-radius">Tungbai</h3>
-                <p class="border-radius-word"> <q>Hi Meaning</q></p>
+                <h3 class="border-radius">Tungbai</h3> <br>
+                <p class="border-radius-word"> <q>{{ $word->tungbai }}</q></p>
             </div>
 
             <div class="col text-center">
-                <h3 class="border-radius">Naitung</h3>
-                <p class="border-radius-word"> <q>Hi Meaning</q></p>
+                <h3 class="border-radius">Naitung</h3> <br>
+                <p class="border-radius-word"> <q>{{ $word->naitung }}</q></p>
             </div>
 
             <div class="col text-center">
-                <h3 class="border-radius">Dendak</h3>
-                <p class="border-radius-word"> <q>Hi Meaning</q></p>
+                <h3 class="border-radius">Dendak</h3> <br>
+                <p class="border-radius-word"> <q>{{ $word->dendak }}</q></p>
             </div>
 
             <div class="col text-center">
-                <h3 class="border-radius">Kaibing</h3>
-                <p class="border-radius-word"> <q>Hi Meaning</q></p>
+                <h3 class="border-radius">Kaibing</h3> <br>
+                <p class="border-radius-word"> <q>{{ $word->kaibing }}</q></p>
             </div>
         </div>
 

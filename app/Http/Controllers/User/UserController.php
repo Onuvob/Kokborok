@@ -9,6 +9,16 @@ use App\Http\Controllers\Controller;
 class UserController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['contributors']);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -82,5 +92,17 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         //
+    }
+
+    //All User Contributors list
+    public function contributors()
+    {
+        return view('user-profile.contributors');
+    }
+
+    //Current Profile Details
+    public function profile()
+    {
+        return view('user-profile.profile');
     }
 }
