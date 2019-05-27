@@ -2,10 +2,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>@yield('title','Kokborok Language')</title>
+    <title>@yield('title','Kokborok Language | Home')</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+
+{{--    site icon--}}
+    <link rel="shortcut icon" type="image/x-icon" href="icon/kokborok.png" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">

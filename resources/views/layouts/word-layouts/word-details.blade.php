@@ -13,7 +13,7 @@
         <mark>Description:</mark> <p class="lead text-white">{{ $word->description }}</p>
 
         <div class="text-center">
-            <img width="200" height="200" src="https://images.pexels.com/photos/2291591/pexels-photo-2291591.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="rounded" alt="...">
+            <img width="200" height="200" src="https://storage.googleapis.com/burbcommunity-glensidelocal/2018/12/Water-Image-1024x576.jpg" class="rounded" alt="...">
         </div>
 
         <hr class="my-4">

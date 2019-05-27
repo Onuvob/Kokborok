@@ -35,4 +35,6 @@ Route::get('/profile', 'User\UserController@profile')->name('profile');
 //Route to show list of contributors
 Route::get('/contributors', 'User\UserController@contributors')->name('contributors');
 
+Route::resource('users', 'User\UserController');
+
 //End User Controller

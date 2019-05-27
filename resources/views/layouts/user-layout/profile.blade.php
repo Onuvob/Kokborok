@@ -5,7 +5,14 @@
 
             <div class="col-md-4">
                 <div class="profile-img">
-                    <img width="150px" height="150px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+
+                    @if( Auth::user()->gender == 'male' )
+                        <img width="150px" height="150px" src="icon/male.png" alt="Contains a picture"/>
+
+                    @else
+                        <img width="150px" height="150px" src="icon/female.png" alt="Contains a picture"/>
+
+                    @endif
                 </div>
             </div>
 
@@ -28,11 +35,9 @@
                 <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModalCenter">
                     Edit Profile
                 </button>
-
-{{--                <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>--}}
             </div>
         </div>
-        <div class="row ">
+        <div class="row">
             <div class="col-md-4 text-center mb-3">
                 <div class="profile-work">
                     <p>Social Networks</p>
@@ -96,6 +101,14 @@
                                 </div>
                                 <div class="col">
                                     <p>{{ Auth::user()->profession }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <label>Address</label>
+                                </div>
+                                <div class="col">
+                                    <p> {{ Auth::user()->address }}</p>
                                 </div>
                             </div>
                         </div>
