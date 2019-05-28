@@ -38,3 +38,11 @@ Route::get('/contributors', 'User\UserController@contributors')->name('contribut
 Route::resource('users', 'User\UserController');
 
 //End User Controller
+
+//Ajax request
+
+// Email Search
+Route::get('/ajax/email-search', 'Ajax\AjaxController@emailSearch')->name('ajax.email-search'); //somehow route name is not working with ajax request in url
+
+// Phone Search
+Route::get('/ajax/phone-search', 'Ajax\AjaxController@phoneSearch')->name('ajax.phone-search');

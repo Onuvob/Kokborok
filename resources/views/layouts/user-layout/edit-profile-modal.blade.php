@@ -1,3 +1,4 @@
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -10,7 +11,7 @@
 {{--                change the method and route later--}}
                 <form method="POST" action="{{ route('users.update' , [ Auth::user()->id ] ) }}">
                     @csrf
-                    {{ method_field('PUT') }}
+                    @method('PATCH')
 
                     <div class="form-group">
 
@@ -45,9 +46,10 @@
                             </div>
                             <div class="col-8">
 
-                                <input id="email" placeholder="Email *" type="email"
+                                <input id="emailInEditPro" placeholder="Email *" type="email"
                                        class="form-control @error('email') is-invalid @enderror" name="email"
                                        value="{{ Auth::user()->email }}{{ old('email') }}" required autocomplete="email">
+                                <span id="messageEmailEditPro"></span>
 
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -95,9 +97,10 @@
                             </div>
                             <div class="col-8">
 
-                                <input type="text" minlength="11" name="phone"
+                                <input id="phoneEditPro" type="text" minlength="11" name="phone"
                                        class="form-control @error('phone') is-invalid @enderror" placeholder="Your Phone *"
                                        value="{{ Auth::user()->phone }}{{ old('phone') }}" required autocomplete="phone" autofocus/>
+                                <span id="messagePhoneEditPro"></span>
 
                                 @error('phone')
                                 <span class="invalid-feedback" role="alert">
@@ -146,8 +149,8 @@
                             <div class="col-8">
 
                                 <input id="edit-profile-password" placeholder="Password *" type="password" class="form-control @error('password') is-invalid @enderror" min="11" name="password" autocomplete="new-password">
-                                <span class="text-muted">(Leave blank if you don't want to change.)</span> <br>
-                                <span class="edit-profile-pass-error text-danger"></span><br/>
+                                <span class="text-muted">(Leave blank if you don't want to change.)</span>
+                                <span class="edit-profile-pass-error text-danger"></span>
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -170,7 +173,7 @@
 
                             <div class="col-8">
                                 <input id="edit-profile-password-confirm" placeholder="Confirm Password *" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
-                                <span class="edit-profile-passconf-error text-danger"></span><br/>
+                                <span class="edit-profile-passconf-error text-danger"></span>
                             </div>
 
                         </div>

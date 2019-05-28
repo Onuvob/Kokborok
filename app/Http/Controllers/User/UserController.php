@@ -83,6 +83,11 @@ class UserController extends Controller
         //
         //dd($user);
         dd($request);
+
+//        $request->user()->fill([
+//            'password' => Hash::make($request->newPassword)
+//        ])->save();
+
     }
 
     /**
