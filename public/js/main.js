@@ -1,6 +1,6 @@
 
 //On key press User Edit profile
-
+// Password confirmation
 $('#edit-profile-password').keyup(function(e)
 {
     //console.log($(this).val());
@@ -36,6 +36,7 @@ $('#edit-profile-password').keyup(function(e)
 
 });
 
+// Edit password confirmation
 $('#edit-profile-password-confirm').keyup(function(e)
 {
     //console.log($(this).val());

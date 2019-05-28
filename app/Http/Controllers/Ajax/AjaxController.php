@@ -13,64 +13,59 @@ class AjaxController extends Controller
     function emailSearch(Request $request)
     {
 
-        if( $request->ajax() )
-        {
+        $data =
+            [
+                "query" => $request->get('query'),
+                "column" => 'email',
+                "ajax" => $request->ajax(),
+            ];
 
-            $query = $request->get('query');
+        $this->ajaxRequestHandler( $data );
 
-
-            if( $query )
-            {
-                $data = DB::table('users')->where('email', $query)->first();
-
-
-                if ( $data == null ) $output = 1;
-
-                elseif( $data->email == Auth::user()->email ) $output = 1;
-
-                else $output = 0;
-
-
-            }
-
-
-            echo json_encode($output);
-        }
-
-        else
-            return "You're dumb! ;)";
     }
 
     // find the phone belongs to other or not
     function phoneSearch(Request $request)
     {
 
-        if( $request->ajax() )
+        $data =
+            [
+                "query" => $request->get('query'),
+                "column" => 'phone',
+                "ajax" => $request->ajax(),
+            ];
+
+        $this->ajaxRequestHandler( $data );
+    }
+
+    // Handler Ajax Request
+    private function ajaxRequestHandler( $data )
+    {
+
+        if( $data['ajax'] )
         {
 
-            $query = $request->get('query');
-
-
-            if( $query )
+            if( $data['query'] )
             {
-                $data = DB::table('users')->where('phone', $query)->first();
+                $column = $data['column'];
+                
+                $dataDB = DB::table('users')->where($data['column'], $data['query'])->first();
 
+                if ( $dataDB == null ) $output = 1;
 
-                if ( $data == null ) $output = 1;
-
-                elseif( $data->phone == Auth::user()->phone ) $output = 1;
+                elseif( $dataDB->$column == Auth::user()->$column ) $output = 1;
 
                 else $output = 0;
 
-
             }
-
 
             echo json_encode($output);
         }
 
         else
             return "You're dumb! ;)";
+
     }
+
 
 }
